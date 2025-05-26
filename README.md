@@ -5,17 +5,15 @@ Multi-round RAG through Self-Practicing](https://arxiv.org/abs/2505.02811) (SIGI
 
 ## Prerequisites
 
-1. Download model checkpoints (optional) and the retrieval corpus (required) from here (to be added).
-
-2. Clone the repository to your local machine:
+1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/your/repository.git
    cd repository
    ```
 
-3. Ensure you have all the required dependencies installed (refer to `requirements.txt` or installation instructions in the repo).
+2. Ensure you have all the required dependencies installed (refer to `requirements.txt` or installation instructions in the repo).
 
-4. If you're using GPT, make sure to set your API key in the environment. You can do this by adding the following line to your .bashrc, .zshrc, or equivalent shell configuration file:
+3. If you're using GPT, make sure to set your API key in the environment. You can do this by adding the following line to your .bashrc, .zshrc, or equivalent shell configuration file:
 
     ```bash
     export OPENAI_API_KEY="your-api-key-here"
@@ -26,7 +24,7 @@ Multi-round RAG through Self-Practicing](https://arxiv.org/abs/2505.02811) (SIGI
     source ~/.bashrc  # or `source ~/.zshrc` for Zsh users
     ```
 
-5. Likewise, if you're using Llama, make sure to set the local path to Llama in the environment:
+4. Likewise, if you're using Llama, make sure to set the local path to Llama in the environment:
     
     ```bash
     export LLAMA_PATH="/path/to/your/llama"
