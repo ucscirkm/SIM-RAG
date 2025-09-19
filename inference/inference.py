@@ -241,7 +241,7 @@ def main_batch(task_contents, question_type, ids, batch_gold_answers, gold_retri
                 'Reasoner Task Content': task_contents[i],
                 'Reasoner Answer': normalize_answer(answer),
                 'Reasoner Rationale': rationale,
-                'Gate Output': verdict,
+                'Critic Output': verdict,
                 'Search Query': query,
                 'Retrieved Titles': retrieved_title_list,  # Keep as list for clarity
                 'Retrieved Docs': retrieved_text_list,    # Keep as list for clarity
