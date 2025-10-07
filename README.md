@@ -36,10 +36,10 @@ Multi-round RAG through Self-Practicing](https://arxiv.org/abs/2505.02811) (SIGI
     ```
 
 ## Prepare Data
-1. Download our prebuilt corpus files `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search/corpus` directory for retrieval.
+1. Download our prebuilt corpus files `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search` directory for retrieval.
 
 ```bash
-git clone https://huggingface.co/datasets/dyang39/SIM-RAG-Corpus bm25_search/corpus
+git clone https://huggingface.co/datasets/dyang39/SIM-RAG-Corpus bm25_search
 ```
 
 2. (Optional) Prepare the original datasets.
