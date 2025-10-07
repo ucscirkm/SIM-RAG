@@ -9,11 +9,14 @@ def generate_command_script(name, dataset_name, use_weighted_training=True, gpt=
     # Search query setting based on dataset name
     if dataset_name == "hotpotqa":
         search_query_setting = "multi_ex"
+        max_turns = 3
     elif dataset_name == "triviaqa":
         search_query_setting = "single_ex"
+        max_turns = 2
     elif dataset_name == "2wikimultihopqa":
         search_query_setting = "2wiki"
         wiki_corpus_flag = "--wiki_corpus"
+        max_turns = 3
 
     sh_content = f"""#!/bin/bash
 # This script runs all commands with specified settings
@@ -37,7 +40,7 @@ run_command() {{
 # Running generation for each dataset
 
 # Running generation
-run_command 'CUDA_VISIBLE_DEVICES={gpus} python3 generation/generation.py --experiment_name {name} --input_path data/original/{dataset_name}_train.csv {weighted_flag} {gpt_flag} --search_query_setting {search_query_setting} --top_docs {top_docs} {remove_repeat_docs_flag} {wiki_corpus_flag}'
+run_command 'CUDA_VISIBLE_DEVICES={gpus} python3 generation/generation.py --experiment_name {name} --input_path data/original/{dataset_name}_train.csv --max_turns {max_turns} {weighted_flag} {gpt_flag} --search_query_setting {search_query_setting} --top_docs {top_docs} {remove_repeat_docs_flag} {wiki_corpus_flag}'
 
 # Preparing training
 run_command 'CUDA_VISIBLE_DEVICES={gpus} python3 dm_training/prepare_training.py --experiment_name {name}'
