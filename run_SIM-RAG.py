@@ -49,7 +49,7 @@ run_command 'CUDA_VISIBLE_DEVICES={gpus} python3 dm_training/prepare_training.py
 run_command 'CUDA_VISIBLE_DEVICES={gpus} python3 dm_training/main.py --experiment_name {name} {weighted_flag}'
 
 # Running inference
-run_command 'CUDA_VISIBLE_DEVICES={gpus} python3 inference/inference.py --experiment_name {name} --input_path data/original/{dataset_name}_test.csv {weighted_flag} {gpt_flag} --search_query_setting {search_query_setting} --top_docs {top_docs} {remove_repeat_docs_flag} {wiki_corpus_flag}'
+run_command 'CUDA_VISIBLE_DEVICES={gpus} python3 inference/inference.py --experiment_name {name} --input_path data/original/{dataset_name}_dev.csv {weighted_flag} {gpt_flag} --search_query_setting {search_query_setting} --top_docs {top_docs} {remove_repeat_docs_flag} {wiki_corpus_flag}'
 """
 
     os.makedirs("./bash_scripts", exist_ok=True)
